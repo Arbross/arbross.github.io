@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Telegram Passport - Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h3>Redirecting...</h3>
+    <h6>
+        If that didn't work,
+        <a id="btn" href="">CLICK HERE</a>
+    </h6>
+    <script type="application/javascript">
+        const btnTag = document.getElementById('btn');
+        if (window.location.search.length) {
+            const isAndroid = /android/i.test(window.navigator.userAgent || '');
+			<!--isAndroid ? 'tg:' : -->
+            const url = ('tg://') + 'resolve' + window.location.search;
+            btnTag.setAttribute('href', url);
+            window.location.replace(url);
+        } else {
+            btnTag.innerText = "Invalid! Query string is not provided.";
+        }
+    </script>
+</body>
+</html>
