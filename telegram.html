@@ -15,8 +15,8 @@
         const btnTag = document.getElementById('btn');
         if (window.location.search.length) {
             const isAndroid = /android/i.test(window.navigator.userAgent || '');
-			<!--isAndroid ? 'tg:' : -->
-            const url = ('tg://') + 'resolve' + window.location.search;
+			<!-- (isAndroid ? 'tg:' : 'tg://') + 'resolve' -->
+            const url = "https://telegram.me/hlp_vivi_bot" + window.location.search;
             btnTag.setAttribute('href', url);
             window.location.replace(url);
         } else {
